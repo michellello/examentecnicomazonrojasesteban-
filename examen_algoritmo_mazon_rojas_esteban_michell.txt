@@ -1,0 +1,81 @@
+-----------------------------ejercio 1---------------------------------------------------------------------
+import java.io.*;
+//importamos librerias de entrada y salida
+import java.util.*;
+// imprte de la utileria  de java
+import java.text.*;
+import java.math.*;
+//con estos import tenemos  acceso ala libreria matematica
+import java.util.regex.*;
+
+
+//clase 
+public class main {
+//metodo estatico 
+    public static void main(String[] args) {
+       // lectura de la variable
+        Scanner one = new Scanner(System.in);
+        int a0 = one.nextInt();//inicalisamos las variables y guardamos en un  metodo de scanner 
+        int a1 = one.nextInt();
+        int a2 = one.nextInt();
+        int b0 = one.nextInt();
+        int b1 = one.nextInt();
+        int b2 = one.nextInt();
+       // inicialisamos la  variable alice =0
+        //bob =a 0
+        int alice = 0;
+        int bob = 0;
+      //  metodos de restricion y de comparacion si alice en la varible a0 er
+        if (a0 > b0) alice ++;
+        if (a0 < b0) bob++;
+        
+        if (a1 > b1) alice++;
+        if (a1 < b1) bob++;
+        
+        if (a2 > b2) alice++;
+        if (a2 < b2) bob++;
+        //mandamos a imprimir los valores
+        System.out.println(alice + " " + bob);
+    }
+}
+
+
+
+----------------------------------------ejercio2------------------------------------------------------------
+import java.io.IOException;
+importar las librerias para lectura de datos
+import java.util.Scanner;
+
+public class Main { //clase principal
+
+    public static void main(String[] args) throws IOException {//metdo statico para la implementacion del main
+        Scanner sc = new Scanner(System.in); //lector de datos
+        String texto;//creamos la variable de texto de tipo string
+       String palabra;//variable de tipo  palabra
+        int numeroDeVeces = 0; //la variable de veses repetidas
+        do {//coparacion donde  mandamos a imprimir el texto 
+            System.out.println("Introduce texto: ");
+            texto = sc.nextLine();texto se guardara en el lectot de datos 
+        } while (texto.isEmpty());//mientra si texto no esta  vacio 
+        System.out.print("Introduce una palabra : ");//mandar a imprimir la palabra a llamar
+        palabra= sc.nextLine();guardarla ala memoria 
+        numeroDeVeces = contarPalbras(texto, palabra);se cuenta cuantas vexe se repitio  la parabra en el texto
+        System.out.println("El caracter " + palabra + " aparece " + numeroDeVeces + " veces");// se manda a imprimr                
+    }
+
+    //calcular el número de veces que se repite un carácter en un String
+    public static int contarpalabras(String cadena, String palabra) {
+        int posicion, contador = 0;// se inicaliza el contador de las palabas
+        //se busca la primera vez que aparece
+        posicion = cadena.indexOf(palabra);
+        while (posicion != -1) { //mientras se encuentre la palbra
+            contador++;           //se cuenta
+            //se sigue buscando a partir de la posición siguiente a la encontrada
+            posicion = cadena.indexOf(palabra, posicion + 1);
+        }
+retorna la pososion
+        return contador;
+   }
+}
+
+------------------------------------
